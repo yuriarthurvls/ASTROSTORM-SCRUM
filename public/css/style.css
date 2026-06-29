@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+}
+
+
+.sidebar{
+    width: 230px;
+    background: #006b3f;
+    color: white;
+    padding: 20px;
+    transition: .4s;
+}
+
+.sidebar h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.sidebar a:hover{
+    background: rgba(255,255,255,.2);
+}
+
+.sidebar.fechado{
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.content{
+    flex: 1;
+    padding: 30px;
+}
+
+h1{
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+
+form{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+
+button{
+    background: #006b3f;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #00884f;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+th{
+    background: #004080;
+    color: white;
+    padding: 12px;
+}
+
+td{
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:hover{
+    background: #f5f5f5;
+}
+
+
+.cards{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card{
+    background: white;
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    text-align: center;
+}
+
+.card h3{
+    color: #006b3f;
+    margin-bottom: 10px;
+}
+
+.card p{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+#menuBtn{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+}

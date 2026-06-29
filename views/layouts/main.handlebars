@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>Sistema de Ocorrências</title>
+</head>
+<body>
+<button id="menuBtn">☰</button>
+
+    <div class="container">
+
+        <div class="sidebar" id="sidebar">
+
+            <h2>IFPE</h2>
+		<a href="/">Início</a>
+            <a href="/dashboard">Dashboard</a>
+
+<a href="/cadastro">Nova Ocorrência</a>
+
+<a href="/ocorrencias">Ocorrências</a>
+
+<a href="/perfil">Sobre o Sistema</a>
+
+<a href="/usuarios">Usuários</a>
+
+        </div>
+
+<div class="content">
+
+    {{{body}}}
+
+</div>
+
+</div>
+
+<script>
+
+const menuBtn = document.getElementById('menuBtn');
+const sidebar = document.getElementById('sidebar');
+
+menuBtn.addEventListener('click', () => {
+
+    sidebar.classList.toggle('fechado');
+
+});
+
+</script>
+
+</body>
+</html>

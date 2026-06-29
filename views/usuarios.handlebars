@@ -1,0 +1,84 @@
+<h1>Usuários</h1>
+<form action="/usuarios" method="GET">
+
+    <input
+        type="text"
+        name="pesquisa"
+        placeholder="Pesquisar usuário..."
+        value="{{pesquisa}}"
+    >
+
+    <button type="submit">
+        Pesquisar
+    </button>
+
+</form>
+</a>
+
+<br><br>
+<a href="/usuarios/novo">
+    <button>Novo Usuário</button>
+</a>
+
+<br><br>
+
+<table>
+
+    <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Cargo</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+    </tr>
+
+    {{#each usuarios}}
+
+    <tr>
+
+        <td>{{this.nome}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.cargo}}</td>
+        <td>{{this.telefone}}</td>
+
+        <td>
+
+            <a href="/usuarios/ver/{{this.id}}">
+                <button>Ver</button>
+            </a>
+
+            <a href="/usuarios/edit/{{this.id}}">
+                <button>Editar</button>
+            </a>
+
+            <form action="/usuarios/delete" method="POST" style="display:inline;">
+
+                <input
+                    type="hidden"
+                    name="id"
+                    value="{{this.id}}"
+                >
+	
+
+    
+                <button type="submit">
+                    Excluir
+                </button>
+
+            </form>
+
+        </td>
+
+    </tr>
+
+    {{/each}}
+{{#unless usuarios.length}}
+
+<tr>
+    <td colspan="5">
+        Nenhum usuário encontrado.
+    </td>
+</tr>
+
+{{/unless}}
+</table>

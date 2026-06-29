@@ -1,0 +1,47 @@
+<h1>Editar Ocorrência</h1>
+
+<form action="/ocorrencias/update" method="POST">
+
+    <input
+        type="hidden"
+        name="id"
+        value="{{ocorrencia.id}}"
+    >
+
+    <input
+        type="text"
+        name="aluno"
+        value="{{ocorrencia.aluno}}"
+    >
+
+    <input
+        type="text"
+        name="turma"
+        value="{{ocorrencia.turma}}"
+    >
+
+    <input
+        type="text"
+        name="professor"
+        value="{{ocorrencia.professor}}"
+    >
+
+    <select name="gravidade">
+
+        <option>{{ocorrencia.gravidade}}</option>
+
+        <option>Leve</option>
+        <option>Média</option>
+        <option>Grave</option>
+
+    </select>
+
+    <textarea
+        name="descricao"
+    >{{ocorrencia.descricao}}</textarea>
+
+    <button type="submit">
+        Salvar Alterações
+    </button>
+
+</form>

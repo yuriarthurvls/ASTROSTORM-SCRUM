@@ -1,0 +1,55 @@
+<h1>Nova Ocorrência</h1>
+
+<form action="/cadastro" method="POST">
+
+    <input
+        type="text"
+        name="aluno"
+        placeholder="Nome do Aluno"
+    >
+
+    <input
+        type="text"
+        name="turma"
+        placeholder="Turma"
+    >
+
+    <input
+        type="text"
+        name="professor"
+        placeholder="Professor"
+    >
+
+    <input
+        type="text"
+        name="tipo"
+        placeholder="Tipo da Ocorrência"
+    >
+
+    <select name="gravidade">
+        <option>Leve</option>
+        <option>Média</option>
+        <option>Grave</option>
+    </select>
+
+    <select name="status">
+        <option>Pendente</option>
+        <option>Em análise</option>
+        <option>Resolvida</option>
+    </select>
+
+    <textarea
+        name="descricao"
+        placeholder="Descrição"
+    ></textarea>
+
+    <textarea
+        name="observacoes"
+        placeholder="Observações"
+    ></textarea>
+
+    <button type="submit">
+        Salvar
+    </button>
+
+</form>

@@ -1,0 +1,88 @@
+<h1>Ocorrências</h1>
+
+<form action="/ocorrencias" method="GET">
+
+    <input
+        type="text"
+        name="pesquisa"
+        placeholder="Pesquisar aluno..."
+        value="{{pesquisa}}"
+    >
+
+    <select name="gravidade">
+        <option value="">Todas as gravidades</option>
+        <option value="Leve">Leve</option>
+        <option value="Média">Média</option>
+        <option value="Grave">Grave</option>
+    </select>
+
+    <button type="submit">
+        Filtrar
+    </button>
+
+</form>
+
+<br>
+
+<table>
+
+    <tr>
+        <th>Aluno</th>
+        <th>Turma</th>
+        <th>Professor</th>
+        <th>Tipo</th>
+        <th>Gravidade</th>
+        <th>Status</th>
+        <th>Descrição</th>
+        <th>Ações</th>
+    </tr>
+
+    {{#each ocorrencias}}
+
+    <tr>
+        <td>{{this.aluno}}</td>
+        <td>{{this.turma}}</td>
+        <td>{{this.professor}}</td>
+        <td>{{this.tipo}}</td>
+        <td>{{this.gravidade}}</td>
+        <td>{{this.status}}</td>
+        <td>{{this.descricao}}</td>
+
+        <td>
+
+            <a href="/ocorrencias/ver/{{this.id}}">
+                <button type="button">Ver</button>
+            </a>
+
+            <br><br>
+
+            <a href="/ocorrencias/edit/{{this.id}}">
+                <button type="button">Editar</button>
+            </a>
+
+            <br><br>
+
+            <form
+                action="/ocorrencias/delete"
+                method="POST"
+                onsubmit="return confirm('Deseja realmente excluir esta ocorrência?')">
+
+                <input
+                    type="hidden"
+                    name="id"
+                    value="{{this.id}}"
+                >
+
+                <button type="submit">
+                    Excluir
+                </button>
+
+            </form>
+
+        </td>
+
+    </tr>
+
+    {{/each}}
+
+</table>

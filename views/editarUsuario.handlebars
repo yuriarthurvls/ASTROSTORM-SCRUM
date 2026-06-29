@@ -1,0 +1,39 @@
+<h1>Editar Usuário</h1>
+
+<form action="/usuarios/update" method="POST">
+
+    <input
+        type="hidden"
+        name="id"
+        value="{{usuario.id}}"
+    >
+
+    <input
+        type="text"
+        name="nome"
+        value="{{usuario.nome}}"
+    >
+
+    <input
+        type="email"
+        name="email"
+        value="{{usuario.email}}"
+    >
+
+    <input
+        type="text"
+        name="cargo"
+        value="{{usuario.cargo}}"
+    >
+
+    <input
+        type="text"
+        name="telefone"
+        value="{{usuario.telefone}}"
+    >
+
+    <button type="submit">
+        Salvar Alterações
+    </button>
+
+</form>
